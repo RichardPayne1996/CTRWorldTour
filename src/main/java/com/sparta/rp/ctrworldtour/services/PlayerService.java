@@ -57,7 +57,7 @@ public class PlayerService {
 
     public PlayerDTO updatePlayerById(int id, PlayerDTO playerDTO) {
         Player player = playerRepository.findById(id).orElseThrow(() -> new RuntimeException("Player with id " + id + " not found"));
-        player.setPlayerName(playerDTO.getName());
+        player.setPlayerName(playerDTO.getPlayerName());
         player.setHandicap(playerDTO.getHandicap());
         player.setScore(playerDTO.getScore());
         Player saved = playerRepository.save(player);

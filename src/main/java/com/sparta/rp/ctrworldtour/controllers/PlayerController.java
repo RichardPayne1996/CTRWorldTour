@@ -53,8 +53,8 @@ public class PlayerController {
         if (oldPlayer == null){
             return ResponseEntity.notFound().build();
         }
-        if (player.getName() == null || player.getName().isEmpty()){
-            player.setName(oldPlayer.getName());
+        if (player.getPlayerName() == null || player.getPlayerName().equals("string")){
+            player.setPlayerName(oldPlayer.getPlayerName());
         }
         if (player.getHandicap() == null) {
             player.setHandicap(oldPlayer.getHandicap());
@@ -62,7 +62,7 @@ public class PlayerController {
         if (player.getScore() == null) {
             player.setScore(oldPlayer.getScore());
         }
-        if (player.getUsername() == null || player.getUsername().isEmpty()){
+        if (player.getUsername() == null || player.getUsername().equals("string")){
             player.setUsername(oldPlayer.getUsername());
         }
 

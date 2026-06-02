@@ -27,7 +27,7 @@ public class Player {
 
     public Player() {};
 
-    public Player(int playerId, String username, String password, String playerName) {
+    public Player(String username, String password, String playerName) {
         this.username = username;
         this.password = password;
         this.playerName = playerName;

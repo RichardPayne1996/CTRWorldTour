@@ -1,25 +1,20 @@
 package com.sparta.rp.ctrworldtour.dtos;
 
 public class PlayerDTO {
-    private int  id;
+    private int playerId;
     private String username;
-    private String name;
+    private String playerName;
     private Integer handicap;
     private Integer score;
 
-    public PlayerDTO(int id, String username, String name, Integer handicap, Integer score) {
-        this.username = username;
-        this.name = name;
-        this.handicap = handicap;
-        this.score = score;
+    public PlayerDTO() {}
+
+    public int getPlayerId() {
+        return playerId;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
+    public void setPlayerId(int id) {
+        this.playerId = id;
     }
 
     public String getUsername() {
@@ -30,12 +25,12 @@ public class PlayerDTO {
         this.username = username;
     }
 
-    public String getName() {
-        return name;
+    public String getPlayerName() {
+        return playerName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setPlayerName(String name) {
+        this.playerName = name;
     }
 
     public Integer getHandicap() {
