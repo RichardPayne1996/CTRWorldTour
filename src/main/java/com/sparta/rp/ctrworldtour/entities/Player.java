@@ -82,4 +82,9 @@ public class Player {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public void updateScore(int rank) {
+        int newScore = getScore() + (rank - 1);
+        setScore(newScore);
+    }
 }

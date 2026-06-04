@@ -63,4 +63,39 @@ public class PlayerService {
         Player saved = playerRepository.save(player);
         return playerMapper.toDTO(saved);
     }
+
+    public void preliminaries() {
+        List<Player> players = playerRepository.findAll();
+        for (Player player : players) {
+            player.setScore(0);
+        }
+        playerRepository.saveAll(players);
+    }
+
+    public void mainEvent() {
+        List<Player> players = playerRepository.findAll();
+        for (Player player : players) {
+            player.setScore(player.getHandicap() * (-1));
+            player.setHandicap(0);
+        }
+        playerRepository.saveAll(players);
+    }
+
+    public List<PlayerDTO> getLeaderboard() {
+        return playerRepository.findAllByOrderByScoreAsc()
+                .stream()
+                .map(playerMapper::toDTO)
+                .toList();
+    }
+
+    public void addToScore(int playerId, int rank) {
+        Player player = playerRepository.findById(playerId).orElseThrow();
+        player.updateScore(rank);
+        playerRepository.save(player);
+    }
+
+    public PlayerDTO getWinner() {
+        List<PlayerDTO> leaderboard =  getLeaderboard();
+        return leaderboard.get(0);
+    }
 }

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/head :: head('CTR World Tour')"></head>
+
+<body th:style="'background-image: url(/images/' + ${course.coursePhotoURL} + '); background-size: cover; background-position: center;'">
+<main>
+    <h1 th:text="${course.courseName}"></h1>
+    <form th:action="@{/courses/{id}/results(id=${course.courseId})}"
+          method="post">
+        <div th:each="player : ${players}">
+            <label th:text="${player.playerName}"></label>
+            <input type="number" min="1" max="8" th:name="${player.playerId}"/>
+        </div>
+        <button type="submit">Finish Race</button>
+    </form>
+
+</main>
+</body>
+</html>

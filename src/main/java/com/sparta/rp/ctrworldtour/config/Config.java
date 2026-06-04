@@ -25,7 +25,7 @@ public class Config {
             }
 
             if (cRepo.count() == 0) {
-                var course1 = new Course("Crash Cove", "Loogie290696");
+                var course1 = new Course("Crash Cove", "crash-cove.jpg");
                 var course2 = new Course("Mystery Caves", "placeholder");
                 cRepo.save(course1);
                 cRepo.save(course2);
