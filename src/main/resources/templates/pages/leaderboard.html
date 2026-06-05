@@ -4,20 +4,22 @@
 
 <body class="main">
 
-<main>
-    <div>
-        <h1>LEADERBOARD</h1>
+<main class="leaderboard-screen">
+    <h1>LEADERBOARD</h1>
+
+    <div class="leaderboard-container">
+        <table class="leaderboard-table">
+            <tbody>
+            <tr th:each="player, stat : ${players}"
+                th:classappend="${stat.first} ? 'leader' : ''">
+                <td th:text="${stat.count}"></td>
+                <td th:text="${player.playerName}"></td>
+                <td th:text="${player.score}"></td>
+            </tr>
+            </tbody>
+        </table>
     </div>
-    <table class="table table-bordered table-hover bg-white">
-        <tbody>
-        <tr th:each="player, stat : ${players}"
-            th:classappend="${stat.first} ? 'leader' : ''">
-            <td th:text="${stat.count}"></td>
-            <td th:text="${player.playerName}"></td>
-            <td th:text="${player.score}"></td>
-        </tr>
-        </tbody>
-    </table>
+
     <form th:action="@{/courses/{id}/next}" method="post">
         <button type="submit" class="menu-button">Next track</button>
     </form>

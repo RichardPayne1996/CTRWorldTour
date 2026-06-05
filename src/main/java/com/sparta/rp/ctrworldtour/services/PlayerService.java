@@ -74,8 +74,9 @@ public class PlayerService {
 
     public void mainEvent() {
         List<Player> players = playerRepository.findAll();
+        calculateHandicap();
         for (Player player : players) {
-            player.setScore(player.getHandicap() * (-1));
+            player.setScore(player.getHandicap());
             player.setHandicap(0);
         }
         playerRepository.saveAll(players);
@@ -97,5 +98,17 @@ public class PlayerService {
     public PlayerDTO getWinner() {
         List<PlayerDTO> leaderboard =  getLeaderboard();
         return leaderboard.get(0);
+    }
+
+    public void calculateHandicap() {
+        int best= 1000000;
+        for (Player player : playerRepository.findAll()) {
+            if (player.getScore() < best) {
+                best = player.getScore();
+            }
+        }
+        for (Player player : playerRepository.findAll()) {
+            player.setHandicap((player.getScore() - best) * -1);
+        }
     }
 }

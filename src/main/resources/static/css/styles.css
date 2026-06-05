@@ -138,3 +138,254 @@ body.main {
     font-weight: bold;
 }
 
+.leaderboard-screen {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 2rem;
+}
+
+.leaderboard-container {
+    width: min(700px, 90vw);
+}
+
+.leaderboard-table {
+    width: 100%;
+
+    border-collapse: separate;
+    border-spacing: 0.5rem;
+
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.leaderboard-table tr {
+    background: rgba(0, 0, 0, 0.75);
+
+
+    box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+
+    height: 90px;
+
+    font-size: 2.5rem;
+}
+
+.leaderboard-table td {
+    padding: 0 1.5rem;
+    color: white;
+}
+
+.leaderboard-table td:first-child {
+    width: 80px;
+    text-align: center;
+}
+
+.leaderboard-table td:nth-child(2) {
+    width: 100%;
+}
+
+.leaderboard-table td:last-child {
+    width: 100px;
+    text-align: right;
+}
+
+.leader {
+    background: linear-gradient(
+            90deg,
+            #ffd700,
+            #ffb300
+    ) !important;
+}
+
+.leader td {
+    color: black;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.race-results {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.results-panel {
+    width: min(650px, 90vw);
+
+    padding: 2rem;
+
+    background: rgba(0, 0, 0, 0.75);
+
+    border: 4px solid #ffb300;
+    border-radius: 20px;
+
+    box-shadow:
+            0 0 20px rgba(0,0,0,0.5),
+            0 0 40px rgba(255,179,0,0.3);
+
+    backdrop-filter: blur(4px);
+}
+
+.results-panel h1 {
+    margin-bottom: 2rem;
+
+    text-align: center;
+
+    color: #ffd54f;
+
+    font-size: 3rem;
+    text-transform: uppercase;
+
+    text-shadow:
+            3px 3px 0 #000,
+            0 0 10px rgba(0,0,0,0.6);
+}
+
+.player-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 1rem;
+    padding: 1rem;
+
+    background: rgba(255,255,255,0.1);
+    border-radius: 12px;
+}
+
+.player-row label {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.player-row input {
+    width: 80px;
+    height: 60px;
+
+    border: 3px solid #ffb300;
+    border-radius: 12px;
+
+    background: #ffb300;
+
+    color: black;
+
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+
+    outline: none;
+
+}
+
+.player-row input:focus {
+    border-color: #ffd54f;
+    box-shadow: 0 0 12px rgba(255,213,79,0.8);
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+.winner-screen {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 2rem;
+}
+
+.winner-panel {
+    text-align: center;
+
+    padding: 3rem;
+
+    background: rgba(0, 0, 0, 0.75);
+
+    border: 4px solid #ffb300;
+    border-radius: 24px;
+
+    box-shadow:
+            0 0 20px rgba(0,0,0,0.6),
+            0 0 40px rgba(255,179,0,0.4);
+
+    min-width: 500px;
+}
+
+.trophy {
+    width: 250px;
+    height: auto;
+
+    margin-bottom: 2rem;
+
+    border-radius: 16px;
+
+    box-shadow:
+            0 0 30px rgba(255,215,0,0.7);
+}
+
+@keyframes trophy-bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+.trophy {
+    animation: trophy-bounce 2s ease-in-out infinite;
+}
+
+.winner-panel h1 {
+    margin: 0;
+
+    font-size: 4rem;
+    text-transform: uppercase;
+
+    color: #ffd700;
+
+    text-shadow:
+            4px 4px 0 #000,
+            0 0 15px rgba(255,215,0,0.5);
+
+    background: linear-gradient(
+            #fff176,
+            #ffca28,
+            #ff8f00
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.winner-panel h2 {
+    margin-top: 1rem;
+
+    font-size: 3rem;
+    text-transform: uppercase;
+
+    color: #ffca28;
+
+    text-shadow:
+            3px 3px 0 #000;
+}
