@@ -21,7 +21,7 @@
     </div>
 
     <form th:action="@{/courses/{id}/next}" method="post">
-        <button type="submit" class="menu-button">Next track</button>
+        <button type="submit" class="menu-button" th:text="${courseNumber >= total ? 'Finish' : 'Next track'}"></button>
     </form>
 </main>
 

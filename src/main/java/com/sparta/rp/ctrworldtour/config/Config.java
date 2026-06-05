@@ -26,9 +26,15 @@ public class Config {
 
             if (cRepo.count() == 0) {
                 var course1 = new Course("Crash Cove", "crash-cove.jpg");
-                var course2 = new Course("Mystery Caves", "placeholder");
+                var course2 = new Course("Mystery Caves", "mystery-caves.webp");
+                var course3 = new Course("Sewer Speedway", "sewer-speedway.jpg");
+                var course4 = new Course("Roo's tubes", "roos-tubes.jpg");
+                var course5 = new Course("Turbo Track", "turbo-track.webp");
                 cRepo.save(course1);
                 cRepo.save(course2);
+                cRepo.save(course3);
+                cRepo.save(course4);
+                cRepo.save(course5);
             }
 
         };

@@ -6,7 +6,15 @@ import org.springframework.stereotype.Service;
 public class TournamentService {
     private int currentCourse;
     private boolean prelims;
+    private String nextCourse;
 
+    public String getNextCourse() {
+        return nextCourse;
+    }
+
+    public void setNextCourse(String nextCourse) {
+        this.nextCourse = nextCourse;
+    }
 
     public int getCurrentCourse() {
         return currentCourse;
@@ -37,4 +45,5 @@ public class TournamentService {
     public void nextTrack() {
         setCurrentCourse(getCurrentCourse() + 1);
     }
+
 }

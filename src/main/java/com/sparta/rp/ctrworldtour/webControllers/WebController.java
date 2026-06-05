@@ -34,6 +34,8 @@ public class WebController {
     @GetMapping("/leaderboard")
     public String leaderboard(Model model) {
         model.addAttribute("players", playerService.getLeaderboard());
+        model.addAttribute("courseNumber", tournamentService.getCurrentCourse());
+        model.addAttribute("total", courseRepository.findAll().size());
         return "pages/leaderboard";
     }
 
